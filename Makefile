@@ -7,7 +7,8 @@ build:
 	- docker build --no-cache --pull . --build-arg julia_version=1.5 -t johnnychen94/juliabook:1.5
 	- docker build --no-cache --pull . --build-arg julia_version=1.6 -t johnnychen94/juliabook:1.6
 	- docker build --no-cache --pull . --build-arg julia_version=1 -t johnnychen94/juliabook:1.6
-	- docker build --no-cache --pull . -t johnnychen94/juliabook:stable
+	- docker tag johnnychen94/juliabook:1.6 johnnychen94/juliabook:1
+	- docker tag johnnychen94/juliabook:1.6 johnnychen94/juliabook:stable
 
 deploy:
 	docker push johnnychen94/juliabook:1.0
